@@ -1,6 +1,6 @@
 'use strict';
 
-const key = 'GBEyJgkenwfBqh8qGYRXyaByU3EPcDZW';
+const key = 'xalzU40wy8Zyjhf7aNWAb4A561aPMYhA';
 
 //get weather information
 const getWeather = async function (id) {
@@ -18,7 +18,7 @@ const getCity = async function (city) {
 	const base =
 		// 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=bf64b2773717f781b6013dfc280804b4';
 		// 'http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=bf64b2773717f781b6013dfc280804b4';
-		`http://dataservice.accuweather.com/locations/v1/cities/search/`;
+		'http://dataservice.accuweather.com/locations/v1/cities/search/';
 
 	const query = `?apikey= ${key}&q=${city}`;
 
