@@ -2,6 +2,18 @@
 
 const key = 'GBEyJgkenwfBqh8qGYRXyaByU3EPcDZW';
 
+//get weather information
+const getWeather = async function (id) {
+	const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+	const query = `${id}?apikey=${key}`;
+
+	const response = await fetch(base + query);
+	const data = await response.json();
+
+	return data[0];
+};
+
+// get city information
 const getCity = async function (city) {
 	const base =
 		// 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=bf64b2773717f781b6013dfc280804b4';
@@ -17,6 +29,9 @@ const getCity = async function (city) {
 };
 
 getCity('manchester')
+	.then((data) => {
+		return getWeather(data.Key);
+	})
 	.then((data) => {
 		console.log(data);
 	})
